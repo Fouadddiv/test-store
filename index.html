@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر التجربة</title>
+    <!-- ربط ملف التنسيق الخارجي -->
+    <link rel="stylesheet" href="style.css">
+    <!-- ربط ملف الجافا سكريبت -->
+    <script src="js.js"></script>
+</head>
+<body>
+    <!-- الهيدر (يظهر في شاشات الحاسوب فقط حالياً) -->
+    <header>
+        <div id="logo">
+            <a href="#">
+                <img src="logo.jpg" alt="الشعار" id="logoImg">
+            </a>
+        </div>
+        <!-- تم نقل شريط التنقل إلى هنا لتوزيعه داخل الهيدر -->
+        <div class="nav"> 
+            <button id="root" class="nvb">الإدارة</button>
+            <button id="ui" class="nvb">المتجر</button>
+            <!-- زر الإعدادات العامة بأيقونة الترس -->
+            <button id="settingsBtn" class="nvb" aria-label="settings">⚙️</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- قسم المستخدم (عرض المنتجات) -->
+        <section id="userSection" class="mainContente">
+                <input class="SearchForProducts" placeholder="ابحث عن منتج...">
+            
+            <div id="prodacte">
+                
+                <!-- المنتج 1: حاسوب محمول -->
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="asusLab.jpg" alt="حاسوب محمول من علامة ASUS" class="imgProdact">
+                    </div>
+                    <div class="card-content-wrapper">
+                        <h1 class="titleOfProdacte">labtop</h1>
+                        <p class="paragraphOfProdacte">ASUS D540Y<br> laptop with 4GB RAM and 256GB SSD</p>
+                        <button class="bayProdact">شراء</button>
+                    </div>
+                </div>
+
+                <!-- المنتج 2: شاشة حاسوب -->
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="ecront.jpg" alt="شاشة حاسوب" class="imgProdact">
+                    </div>
+                    <div class="card-content-wrapper">
+                        <h1 class="titleOfProdacte">screene</h1>
+                        <p class="paragraphOfProdacte">19-inch LED screen with VGA and HDMI ports.</p>
+                        <button class="bayProdact">شراء</button>
+                    </div>
+                </div>
+
+                <!-- المنتج 3: تلفاز ذكي -->
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="streemTv.jpg" alt="تلفاز ذكي" class="imgProdact">
+                    </div>
+                    <div class="card-content-wrapper">
+                        <h1 class="titleOfProdacte">smarte tv</h1>
+                        <p class="paragraphOfProdacte">Google TV Smart TV with vibrant display and sleek design.</p>
+                        <button class="bayProdact">شراء</button>
+                    </div>
+                </div>
+
+                <!-- المنتج 4: هاتف ريلمي -->
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="reelm.jpg" alt="هاتف ريلمي" class="imgProdact">
+                    </div>
+                    <div class="card-content-wrapper">
+                        <h1 class="titleOfProdacte">reelm c72</h1>
+                        <p class="paragraphOfProdacte">Realme C72 with large display and strong battery.</p>
+                        <button class="bayProdact">شراء</button>
+                    </div>
+                </div>
+
+                <!-- المنتج 5: توين بوكس -->
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="twinBox.jpg" alt="توين بوكس" class="imgProdact">
+                    </div>
+                    <div class="card-content-wrapper">
+                        <h1 class="titleOfProdacte">twinBox</h1>
+                        <p class="paragraphOfProdacte">Twin Box with internet and TV support.</p>
+                        <button class="bayProdact">شراء</button>
+                    </div>
+                </div>
+
+                <!-- المنتج 6: سماعات بلوتوث -->
+                <div class="card">
+                    <div class="card-image-wrapper">
+                        <img src="m20Pro.jpg" alt="سماعات بلوتوث" class="imgProdact">
+                    </div>
+                    <div class="card-content-wrapper">
+                        <h1 class="titleOfProdacte">M20 Pro Earbuds</h1>
+                        <p class="paragraphOfProdacte">Wireless earbuds with deep bass and long battery life.</p>
+                        <button class="bayProdact">شراء</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم تسجيل دخول المسؤول -->
+        <section id="loginSection" class="mainContente" style="display: none;">
+            <div class="login-container">
+                <h1 style="text-align: center; color: rgb(100, 255, 218);">دخول المسؤول</h1>
+                <input type="text" id="username" placeholder="اسم المستخدم" class="adminInput">
+                <input type="password" id="password" placeholder="كلمة المرور" class="adminInput">
+                <button id="loginBtn" class="adminBtn">دخول</button>
+                <p id="loginError" style="color: red; text-align: center; display: none;">بيانات خاطئة!</p>
+            </div>
+        </section>
+
+        <!-- لوحة تحكم المسؤول -->
+        <section id="adminSection" class="mainContente" style="display: none;">
+            <h1 style="text-align: center; color: rgb(100, 255, 218);">لوحة التحكم</h1>
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="dashboard">الرئيسية</button>
+                <button class="tab-btn" data-tab="orders">الطلبات</button>
+                <button class="tab-btn" data-tab="stats">الإحصائيات</button>
+            </div>
+            <!-- محتوى التبويبات (تم تنظيمه سابقاً) -->
+            <div id="dashboard" class="tab-content active">
+                <div id="adminControls">
+                    <form id="addProductForm">
+                        <input type="text" placeholder="عنوان المنتج" class="adminInput">
+                        <input type="text" placeholder="الوصف" class="adminInput">
+                        <input type="text" placeholder="رابط الصورة" class="adminInput">
+                        <button type="submit" class="adminBtn">إضافة منتج</button>
+                    </form>
+                </div>
+            </div>
+            <div id="orders" class="tab-content"> <p style="text-align:center;">لا توجد طلبات.</p> </div>
+            <div id="stats" class="tab-content">
+                <div class="stats-grid">
+                    <div class="stat-card"><h4>المنتجات</h4><p>6</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قائمة الإعدادات العامة (Modal) -->
+        <section id="settingsMenu" class="mainContente" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.9); z-index: 2000; justify-content: center; align-items: center;">
+            <div class="login-container">
+                <h2 style="text-align: center; color: rgb(100, 255, 218);">الإعدادات العامة</h2>
+                
+                <!-- خيار تغيير اللغة -->
+                <div class="settings-item">
+                    <label>تغيير اللغة:</label>
+                    <select id="langSelect" class="adminInput">
+                        <option value="ar">العربية</option>
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+
+                <!-- الأزرار المنقولة -->
+                <button id="ldMode" class="adminBtn">تبديل الوضع (ليلي/نهاري)</button>
+                <button id="contactes" class="adminBtn">اتصل بنا</button>
+                
+                <!-- زر العودة -->
+                <button id="closeSettings" class="adminBtn" style="background: #ff4d4d;">إغلاق / عودة</button>
+            </div>
+        </section>
+
+        <!-- نموذج طلب الشراء -->
+        <section id="orderSection" class="mainContente" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center;">
+            <div class="login-container">
+                <h2 style="text-align: center; color: rgb(100, 255, 218);">إتمام الطلب</h2>
+                <form id="purchaseForm">
+                    <input type="text" id="custName" placeholder="الاسم الكامل" class="adminInput" required>
+                    <input type="tel" id="custPhone" placeholder="رقم الهاتف" class="adminInput" required>
+                    <input type="text" id="custAddress" placeholder="العنوان" class="adminInput" required>
+                    <button type="submit" class="adminBtn">تأكيد الشراء</button>
+                    <button type="button" id="closeOrderBtn" class="adminBtn" style="background: #ff4d4d;">إلغاء</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
