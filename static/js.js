@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const response = await fetch('/api/orders/');
                 const orders = await response.json();
                 for (let order of orders) {
-                    await fetch(`http://127.0.0.1:8000/api/orders/${order.id}/`, { method: 'DELETE' });
+                    await fetch(`/api/orders/${order.id}/`, { method: 'DELETE' });
                 }
                 alert('تم تصفير الطلبات بنجاح.');
                 fetchOrders();
