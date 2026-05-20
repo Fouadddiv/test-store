@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- جلب المنتجات من الواجهة الخلفية ---
     async function fetchProducts() {
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/products/');
+            // استخدام مسار نسبي لكي يعمل على أي دومين
+            const response = await fetch('/api/products/');
             const products = await response.json();
             renderProducts(products);
         } catch (error) {
@@ -404,7 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchOrders() {
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/orders/');
+            const response = await fetch('/api/orders/');
             const orders = await response.json();
             renderOrders(orders);
             
@@ -472,7 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resetOrdersBtn.addEventListener('click', async () => {
             if(!confirm('هل أنت متأكد من مسح جميع الطلبات نهائياً؟')) return;
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/orders/');
+                const response = await fetch('/api/orders/');
                 const orders = await response.json();
                 for (let order of orders) {
                     await fetch(`http://127.0.0.1:8000/api/orders/${order.id}/`, { method: 'DELETE' });

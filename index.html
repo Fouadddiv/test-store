@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -5,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>teste STORE</title>
     <!-- ربط ملف التنسيق الخارجي -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <!-- ربط ملف الجافا سكريبت -->
-    <script src="js.js"></script>
+    <script src="{% static 'js.js' %}"></script>
 </head>
 <body>
     <!-- الهيدر (يظهر في شاشات الحاسوب فقط حالياً) -->
