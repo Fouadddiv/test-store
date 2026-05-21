@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'card';
             // استخدام رابط الصورة من السيرفر، أو صورة افتراضية
-            const imageUrl = product.image ? product.image : 'logo.jpg';
+            const imageUrl = product.image ? product.image : '/static/logo.jpg';
             card.innerHTML = `
                 <div class="card-image-wrapper">
                     <img src="${imageUrl}" alt="${product.name}" class="imgProdact">
