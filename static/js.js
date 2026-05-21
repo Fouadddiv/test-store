@@ -46,8 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
         products.forEach(product => {
             const card = document.createElement('div');
             card.className = 'card';
-            // استخدام رابط الصورة من السيرفر، أو صورة افتراضية
-            const imageUrl = product.image ? product.image : '/static/logo.jpg';
+            
+            // الخبير: منطق معالجة متطور لضمان الربط بمجلد الميديا/بروديكت
+            let imageUrl = '/static/logo.jpg';
+            if (product.image) {
+                // إذا كان الرابط يبدأ بـ http أو / فهو جاهز، وإلا نقوم ببنائه يدوياً لضمان الربط بالميديا
+                imageUrl = (product.image.startsWith('http') || product.image.startsWith('/')) 
+                           ? product.image 
+                           : `/media/${product.image}`;
+            }
+
             card.innerHTML = `
                 <div class="card-image-wrapper">
                     <img src="${imageUrl}" alt="${product.name}" class="imgProdact">
