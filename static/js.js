@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/products/', {
+                const response = await fetch('/api/products/', {
                     method: 'POST',
                     body: formData
                 });
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/orders/', {
+                const response = await fetch('/api/orders/', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(orderData)
@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(openDeleteModalBtn) {
         openDeleteModalBtn.addEventListener('click', async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/products/');
+                const response = await fetch('/api/products/');
                 const products = await response.json();
                 
                 deleteProdSelect.innerHTML = '';
@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if(!confirm('هل أنت متأكد تماماً من حذف هذا المنتج؟ لا يمكن التراجع عن هذا الإجراء.')) return;
 
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/products/${productId}/`, {
+                const response = await fetch(`/api/products/${productId}/`, {
                     method: 'DELETE'
                 });
                 
@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const orders = await response.json();
             renderOrders(orders);
             
-            const prodResp = await fetch('http://127.0.0.1:8000/api/products/');
+            const prodResp = await fetch('/api/products/');
             const products = await prodResp.json();
             updateStats(orders, products);
         } catch (error) {
