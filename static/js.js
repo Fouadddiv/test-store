@@ -27,6 +27,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastActiveSection = userSection;
     let selectedProductName = ''; // لتخزين اسم المنتج المختار
 
+    // --- نسخ أزرار التنقل إلى الحاوية TabNav مع الحفاظ على الوظائف ---
+    const TabNav = document.getElementById('TabNav');
+    if (TabNav && mainNav) {
+        const navButtons = mainNav.querySelectorAll('.nvb');
+        navButtons.forEach(btn => {
+            const clone = btn.cloneNode(true);
+            // إزالة المعرف لتجنب التكرار في الصفحة، مع الحفاظ على التنسيق عبر الكلاس
+            clone.removeAttribute('id'); 
+            clone.addEventListener('click', () => {
+                btn.click(); // تشغيل وظيفة الزر الأصلي عند النقر على النسخة
+            });
+            TabNav.appendChild(clone);
+        });
+    }
+
     // --- جلب المنتجات من الواجهة الخلفية ---
     async function fetchProducts() {
         try {
