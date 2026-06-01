@@ -235,11 +235,17 @@ section {
         padding: 0.8em 0.2em;
         text-align: center;
     }
+    .titleOfProdacte{
+        padding-bottom: 1em;
+        padding-top: 1em;
+        font-weight: bold;
+        align-items: center;
+    }
 }
 
 
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 405px) {
     header {
         display: n !important;
     }
