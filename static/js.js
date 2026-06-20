@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderProducts(products);
         } catch (error) {
             console.error('Error fetching products:', error);
-            if(productsContainer) productsContainer.innerHTML = '<p style="color:red; text-align:center;">عذراً، تعذر الاتصال بالخادم.</p>';
+            if(productsContainer) productsContainer.innerHTML = '<p style="color:red; text-align:center;">عذراً، المعذرة هناك خلل في الاتصال بالخادم.</p>';
         }
     }
 
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'card';
             
-            // الخبير: منطق معالجة متطور لضمان الربط بمجلد الميديا/بروديكت
+            //  منطق معالجة متطور لضمان الربط بمجلد الميديا/بروديكت
             let imageUrl = '/static/logo.jpg';
             if (product.image) {
                 // إذا كان الرابط يبدأ بـ http أو / فهو جاهز، وإلا نقوم ببنائه يدوياً لضمان الربط بالميديا
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: JSON.stringify(orderData)
                 });
                 if(response.ok) {
-                    alert('تم تأكيد طلبك بنجاح! سنتواصل معك قريباً.');
+                    alert('تم تأكيد الطلب الخاص بك ! انتظر اتصالنا قريبا.');
                     purchaseForm.reset();
                     if(orderSection) orderSection.style.display = 'none';
                 }
